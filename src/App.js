@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button, Center } from '@chakra-ui/react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { auth } from './Config/firebase';
+import AuthenticationRouter from './Router/AuthenticationRouter';
+import DashboardRouter from './Router/DashboardRouter';
+import ExampleRouter from './Router/ExampleRouter';
+import MainRouter from './Router/MainRouter';
 
 function App() {
+	const [isLoggedin,setIsLoggedin]=useState(false)
+
+	onAuthStateChanged(auth, (user) => {
+		if (user) {
+
+		  setIsLoggedin(true)
+		} else {
+	  setIsLoggedin(false)
+		}
+	  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	<>
+
+
+	{isLoggedin?
+		<MainRouter/>
+	:
+		<AuthenticationRouter/>
+	}
+	</>
+);
 }
 
 export default App;
