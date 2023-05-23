@@ -11,7 +11,7 @@ function SettingsPage() {
 		{ icon: FiUser, title: 'Account', link: 'account', description: 'Update your acccount' },
 		{ icon: FiUser, title: 'Account', link: 'account', description: 'Update your acccount' },
 		{ icon: FiUser, title: 'Account', link: 'account', description: 'Update your acccount' },
-		{ icon: FiUser, title: 'Account', link: 'account', description: 'Update your acccount' },
+		{ icon: FiUser, title: 'Account', link: 'account', description: 'Update your acccount' }
 	]
 
 	return (

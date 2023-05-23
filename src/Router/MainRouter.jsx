@@ -1,4 +1,4 @@
-import { Container, Flex } from '@chakra-ui/react'
+import { Box, Container, Flex } from '@chakra-ui/react'
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { SidebarComponent } from '../Components/Sidebar/SidebarComponent'
@@ -9,7 +9,9 @@ import SettingRouter from './SettingRouter'
 function MainRouter() {
 	return (
 		<Flex maxW='full'>
-			<SidebarComponent />
+			<Box position='sticky' overflowY='auto'>
+				<SidebarComponent />
+			</Box>
 			<Routes>
 				<Route path="/" element={<DashboardRouter />} />
 				<Route path="dashboard/*" element={<DashboardRouter />} />

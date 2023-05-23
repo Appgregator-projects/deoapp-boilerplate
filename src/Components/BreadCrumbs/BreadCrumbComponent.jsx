@@ -19,18 +19,17 @@ function BreadCrumbComponent(props) {
 			{ title: 'Product', link: '/product' },
 		]
 
-	console
 
-		.return(
-			<Breadcrumb fontWeight='medium' fontSize='sm'>
-				{data.map((x, i) =>
-					<BreadcrumbItem key={i}>
-						<Link to={x.link}>
-							{x.title}
-						</Link>
-					</BreadcrumbItem>
-				)}
-			</Breadcrumb>)
+	return (
+		<Breadcrumb fontWeight='medium' fontSize='sm'>
+			{data.map((x, i) =>
+				<BreadcrumbItem key={i}>
+					<Link to={x.link}>
+						{x.title}
+					</Link>
+				</BreadcrumbItem>
+			)}
+		</Breadcrumb>)
 }
 
 export default BreadCrumbComponent
