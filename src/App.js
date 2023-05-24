@@ -20,12 +20,23 @@ function App() {
     }
   });
 
-  //   return <>{isLoggedin ? <MainRouter /> : <AuthenticationRouter />}</>;
   return (
-    <Layout>
-      <MainRouter />
-    </Layout>
+    <>
+      {isLoggedin ? (
+        <Layout>
+          <MainRouter />
+        </Layout>
+      ) : (
+        <AuthenticationRouter />
+      )}
+    </>
   );
+
+  // return (
+  //   <Layout>
+  //     <MainRouter />
+  //   </Layout>
+  // );
 }
 
 export default App;

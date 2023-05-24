@@ -12,7 +12,7 @@ function MainRouter() {
     <Routes>
       <Route path="setting/*" element={<SettingRouter />} />
       {allRouter.map((item, index) => {
-        return <Route path={item.path} element={item.element} />;
+        return <Route key={index} path={item.path} element={item.element} />;
       })}
     </Routes>
   );

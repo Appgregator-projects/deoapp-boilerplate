@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import { Box, Container, Flex } from "@chakra-ui/react";
-import Sidebar from "./Components/Sidebar";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+import { Container, Flex } from "@chakra-ui/react";
+import { Fragment } from "react";
+import FooterComponent from "../Components/Footers/FooterComponent";
+import HeaderComponent from "../Components/Header/HeaderComponents";
+import SidebarComponentV2 from "../Components/Sidebar/SidebarComponentV2";
 import themeConfig from "../Config/themeConfig";
 
 function Layout({ children }) {
@@ -14,16 +14,16 @@ function Layout({ children }) {
   return (
     <Fragment>
       <Flex height="100vh" w={"full"} bgColor={"gray.50"}>
-        <Sidebar layout={themeConfig.layout} />
+        <SidebarComponentV2 layout={themeConfig.layout} />
 
         <Container maxW={"full"} overflowY={"scroll"} pt={"4"}>
-          <Header layout={themeConfig.layout} />
+          <HeaderComponent layout={themeConfig.layout} />
 
           <Container minH={"95vh"} maxW={contentWidth}>
             {children}
           </Container>
 
-          <Footer />
+          <FooterComponent />
         </Container>
       </Flex>
     </Fragment>

@@ -24,13 +24,13 @@ import {
   FiSettings,
   FiUsers,
 } from "react-icons/fi";
+import themeConfig from "../../Config/themeConfig";
 import { NavButton } from "./NavButton";
 import { UserProfile } from "./UserProfile";
 
 // ** Theme Configuration
-import themeConfig from "../../../Config/themeConfig";
 
-function Sidebar({ layout }) {
+function SidebarComponentV2({ layout }) {
   if (layout.type === "vertical" || layout.type === "vertical-horizontal")
     return (
       <Box
@@ -170,4 +170,4 @@ function Sidebar({ layout }) {
   return <></>;
 }
 
-export default Sidebar;
+export default SidebarComponentV2;

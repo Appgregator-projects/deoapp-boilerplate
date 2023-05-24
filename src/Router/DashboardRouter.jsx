@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import DashboardPage from '../Pages/Dashboard/DashboardPage'
+import ExamplePage from '../Pages/Example/ExamplePage'
 
 // function DashboardRouter() {
 // 	return (
@@ -19,7 +20,7 @@ const DashboardRouter = [
 	},
 	{
 		path: "/dashboard",
-		element: <DashboardPage />
+		element: <ExamplePage />
 	},
 	{
 		path: "/dashboard/:id",
