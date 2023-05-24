@@ -7,18 +7,14 @@ import ExampleRouter from "./ExampleRouter";
 import SettingRouter from "./SettingRouter";
 
 function MainRouter() {
+  const allRouter = [...DashboardRouter];
   return (
-    // <Flex maxW='full'>
-    // 	<Box position='sticky' overflowY='auto'>
-    // 		<SidebarComponent />
-    // 	</Box>
     <Routes>
-      <Route path="/" element={<DashboardRouter />} />
-      <Route path="dashboard/*" element={<DashboardRouter />} />
       <Route path="setting/*" element={<SettingRouter />} />
-      <Route path="example/*" element={<ExampleRouter />} />
+      {allRouter.map((item, index) => {
+        return <Route path={item.path} element={item.element} />;
+      })}
     </Routes>
-    // </Flex>
   );
 }
 

@@ -5,17 +5,24 @@ import { NavBarWithAvatarComponent } from '../Components/Navbar/NavbarWithAvatar
 import ExamplePage from '../Pages/Example/ExamplePage'
 
 
-function ExampleRouter() {
+// function ExampleRouter() {
 
-	return (<>
-		<Container maxW='full'>
-			<NavBarWithAvatarComponent />
-			<Routes>
-				<Route path="/" element={<ExamplePage />} />
-			</Routes>
-		</Container>
-	</>
-	)
-}
+// 	return (<>
+// 		<Container maxW='full'>
+// 			<NavBarWithAvatarComponent />
+// 			<Routes>
+// 				<Route path="/" element={<ExamplePage />} />
+// 			</Routes>
+// 		</Container>
+// 	</>
+// 	)
+// }
+
+const ExampleRouter = [
+	{
+		path: "/",
+		element: <ExamplePage />
+	},
+]
 
 export default ExampleRouter
