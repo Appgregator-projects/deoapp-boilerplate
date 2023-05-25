@@ -30,14 +30,6 @@ function App() {
       )}
     </Stack>
   );
-
-  // return (
-  //   <Layout>
-  //     <MainRouter />
-  //   </Layout>
-
-    
-  // );
 }
 
 export default App;
