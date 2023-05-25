@@ -1,36 +1,69 @@
-import axios from "axios"
-const url = process.env.REACT_APP_SLACK
+import axios from "axios";
 
-let json = {
-	channel:'#general',
-	username:'webhookBot',
-	text:'this is the text',
-	icon_emoji:':ghost:'
-}
+const url = process.env.REACT_APP_SLACK;
 
-export const errorSlack = async(error)=>{
-	json.text=error
-	axios.post(url,
-	`payload=${JSON.stringify(json)}` )
-}
+const defaultSlackMessage = {
+  channel: "#general",
+  username: "webhookBot",
+  text: "",
+  icon_emoji: ":ghost:",
+};
 
-export const loginSlack=async(data)=>{
-	json.text=`${data} loggedin ${new Date()}`
-	json.channel='#login'
-	json.icon_emoji=':wave:'
+const postSlackMessage = async (message) => {
+  try {
+    await axios.post(url, `payload=${JSON.stringify(message)}`);
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
 
-	axios.post(url,
-		`payload=${JSON.stringify(json)}` )
+export const errorSlack = async (error, platform) => {
+  const slackMessage = {
+    ...defaultSlackMessage,
+    text: `error in ${error} at ${platform}`,
+  };
 
-}
+  try {
+    const result = await postSlackMessage(slackMessage);
+    return result;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to send Slack error message");
+  }
+};
 
-export const logoutSlack=async(data)=>{
+export const loginSlack = async (data, platform) => {
+  const slackMessage = {
+    ...defaultSlackMessage,
+    text: `${data} logged in ${new Date()} at ${platform}`,
+    channel: "#login",
+    icon_emoji: ":wave:",
+  };
 
-	json.text=`${data} loggedout ${new Date()}`
-	json.channel='#logout'
-	json.icon_emoji=':wave:'
+  try {
+    const result = await postSlackMessage(slackMessage);
+    return result;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to send Slack login message");
+  }
+};
 
-	axios.post(url,
-		`payload=${JSON.stringify(json)}` )
+export const logoutSlack = async (data, platform) => {
+  const slackMessage = {
+    ...defaultSlackMessage,
+    text: `${data} logged out ${new Date()} at ${platform}`,
+    channel: "#logout",
+    icon_emoji: ":wave:",
+  };
 
-}
+  try {
+    const result = await postSlackMessage(slackMessage);
+    return result;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to send Slack logout message");
+  }
+};

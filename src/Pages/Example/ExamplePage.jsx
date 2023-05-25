@@ -22,6 +22,7 @@ import { NavBarWithTowRows } from '../../Components/Navbar/NavbarWithTwoRows'
 import { PricingTableComponent } from '../../Components/Pricing/PricingTableComponent'
 import { PricingCornerPage } from '../../Components/Pricing/PricngCornerBadge'
 import { SidebarComponent } from '../../Components/Sidebar/SidebarComponent'
+import SlackTestingComponents from '../../Components/Slack/SlackTestingComponents'
 import { StatsWithIconComponent } from '../../Components/Stats/StatsWithIconComponent'
 import { TableComponent } from '../../Components/Tables/TableComponent'
 import VideoComponent from '../../Components/Video/VideoComponent'
@@ -49,8 +50,9 @@ function ExamplePage() {
 				<Tab>Forms</Tab>
 				<Tab>Footer</Tab>
 				<Tab>Video</Tab>
-				<Tab>Array Method</Tab>
+				<Tab>Array</Tab>
 				<Tab>Calendar</Tab>
+				<Tab>Slack</Tab>
 			</TabList>
 
 			<TabPanels>
@@ -131,6 +133,12 @@ function ExamplePage() {
 				<TabPanel>
 					<CalendarComponents />
 				</TabPanel>
+
+				<TabPanel>
+					<SlackTestingComponents />
+				</TabPanel>
+
+
 
 			</TabPanels>
 		</Tabs>

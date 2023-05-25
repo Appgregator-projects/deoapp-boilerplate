@@ -27,7 +27,7 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { auth, db, storage } from "../Config/firebase";
-import { errorSlack, loginSlack, logoutSlack, slackLogin } from "./slackApi";
+import { errorSlack, loginSlack, logoutSlack } from "./slackApi";
 
 // get Doc Firebase
 
