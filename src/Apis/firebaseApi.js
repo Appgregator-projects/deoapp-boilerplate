@@ -99,7 +99,7 @@ export const getCollectionFirebase = async (
       // Lakukan manipulasi data atau operasi lain jika diperlukan
       collectionData.push(docData);
     });
-    console.log(collectionData); // Outputkan data koleksi ke konsol (bisa diganti sesuai kebutuhan)
+   return collectionData; // Outputkan data koleksi ke konsol (bisa diganti sesuai kebutuhan)
   } catch (error) {
     console.log("Terjadi kesalahan:", error);
   }
