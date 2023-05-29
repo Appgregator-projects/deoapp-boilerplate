@@ -15,15 +15,22 @@ import {
 import { useState } from 'react'
 import { loginUser } from '../../Apis/firebaseApi'
 import { Logo } from '../../Components/Logo'
+import { useAuthDispatch } from '../../Hooks/Contexts'
 // import { OAuthButtonGroup } from './OAuthButtonGroup'
 // import { PasswordField } from './PasswordField'
 
 function LoginPage() {
+	// ** Hooks
+	const dispatch = useAuthDispatch();
+
+	// ** States
 	const [data, setData] = useState({})
 	const [loading, setLoading] = useState(false)
+
+	// ** Handle
 	const handleLogin = async () => {
 		setLoading(true)
-		await loginUser(data.email, data.password)
+		await loginUser(data.email, data.password, dispatch)
 		setLoading(false)
 	}
 

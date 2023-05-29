@@ -2,6 +2,7 @@ import { Heading, SimpleGrid, Tab, TabList, TabPanel, TabPanels, Tabs } from '@c
 import React from 'react'
 import { BannerWithButtonComponent } from '../../Components/Banners/BannerWithButtonComponent'
 import BreadCrumbComponent from '../../Components/BreadCrumbs/BreadCrumbComponent'
+import CalendarComponents from '../../Components/Calendar/CalendarComponents'
 import BasicCardComponent from '../../Components/Cards/BasicCardComponent'
 import FeedCardComponent from '../../Components/Cards/FeedCardComponent'
 import IconCardComponent from '../../Components/Cards/IconCardComponent'
@@ -21,8 +22,11 @@ import { NavBarWithTowRows } from '../../Components/Navbar/NavbarWithTwoRows'
 import { PricingTableComponent } from '../../Components/Pricing/PricingTableComponent'
 import { PricingCornerPage } from '../../Components/Pricing/PricngCornerBadge'
 import { SidebarComponent } from '../../Components/Sidebar/SidebarComponent'
+import SlackTestingComponents from '../../Components/Slack/SlackTestingComponents'
 import { StatsWithIconComponent } from '../../Components/Stats/StatsWithIconComponent'
 import { TableComponent } from '../../Components/Tables/TableComponent'
+import VideoComponent from '../../Components/Video/VideoComponent'
+import ArrayUtil from '../../Utils/arrayUtil'
 
 function ExamplePage() {
 	return (<>
@@ -45,6 +49,10 @@ function ExamplePage() {
 				<Tab>Banners</Tab>
 				<Tab>Forms</Tab>
 				<Tab>Footer</Tab>
+				<Tab>Video</Tab>
+				<Tab>Array</Tab>
+				<Tab>Calendar</Tab>
+				<Tab>Slack</Tab>
 			</TabList>
 
 			<TabPanels>
@@ -115,6 +123,23 @@ function ExamplePage() {
 				<TabPanel>
 					<FooterTwoColumnsComponent />
 				</TabPanel>
+				<TabPanel>
+					<VideoComponent videoUrl={"https://media.w3.org/2010/05/sintel/trailer_hd.mp4"} poster={"https://media.licdn.com/dms/image/D5603AQH5Kajx1ocJDA/profile-displayphoto-shrink_800_800/0/1669221757358?e=2147483647&v=beta&t=Xua3Hjm66G-K1HlnK65kZkdOepuxDdGuWeJsuB0l8wo"} />
+				</TabPanel>
+				<TabPanel>
+					<ArrayUtil/>
+				</TabPanel>
+
+				<TabPanel>
+					<CalendarComponents />
+				</TabPanel>
+
+				<TabPanel>
+					<SlackTestingComponents />
+				</TabPanel>
+
+
+
 			</TabPanels>
 		</Tabs>
 
