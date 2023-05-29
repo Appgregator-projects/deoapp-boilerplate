@@ -15,13 +15,13 @@ import {
 import { useState } from 'react'
 import { loginUser } from '../../Apis/firebaseApi'
 import { Logo } from '../../Components/Logo'
-import { useAuthDispatch } from '../../Hooks/Contexts'
+import { useGlobalDispatch } from '../../Hooks/Contexts'
 // import { OAuthButtonGroup } from './OAuthButtonGroup'
 // import { PasswordField } from './PasswordField'
 
 function LoginPage() {
 	// ** Hooks
-	const dispatch = useAuthDispatch();
+	const dispatch = useGlobalDispatch();
 
 	// ** States
 	const [data, setData] = useState({})

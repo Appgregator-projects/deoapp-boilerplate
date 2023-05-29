@@ -12,7 +12,7 @@ export const initialState = {
 
 // ** Define the context reducer
 // ** you still don't know reducer? read this: https://reactjs.org/docs/hooks-reference.html#usereducer , and buy some ram
-export const AuthReducer = (initialState, action) => {
+export const GlobalReducer = (initialState, action) => {
   switch (action.type) {
     case "REQUEST_LOGIN":
       return {
@@ -40,6 +40,24 @@ export const AuthReducer = (initialState, action) => {
         user: "",
         token: "",
       };
+
+	  case "AUTH_STATUS":
+		return {
+		  ...initialState,
+		  isLoggedin: action.payload.isLoggedin,
+		  uid: action.payload.uid,
+		};
+
+		case "PROJECTS":
+			return {
+				...initialState,
+				projects:action.payload.projects
+			}
+		case "CURRENT_PROJECTS":
+			return{
+				...initialState,
+				currentProject:action.payload.projects
+			}
 
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
