@@ -234,7 +234,7 @@ export const getCollectionWithSnapshotFirebase = async (
 export const setDocumentFirebase = async (collectionName, docName, data) => {
   try {
     if (!data.createdAt) data.lastUpdated = new Date();
-    data.lastUpdatedBy = auth.currentUser.uid;
+    data.lastUpdatedBy = {uid: auth.currentUser.uid, email: auth.currentUser.email}
     data.projectID = "project ID here";
 
     const docRef = doc(db, collectionName, docName);
@@ -303,7 +303,7 @@ export const addDocumentFirebase = async (collectionName, data) => {
 export const updateDocumentFirebase = async (collectionName, docName, data) => {
   try {
     data.lastUpdated = new Date();
-    data.lastUpdatedBy = auth.currentUser.uid;
+    data.lastUpdatedBy = {uid: auth.currentUser.uid, email: auth.currentUser.email}
 
     const docRef = doc(db, collectionName, docName);
     await updateDoc(docRef, data);

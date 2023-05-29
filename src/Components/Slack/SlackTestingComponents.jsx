@@ -18,8 +18,8 @@ function SlackTestingComponents() {
     const testErrorSlack = async () => {
         const data = 'error nih jing'
         try {
-            const res = await errorSlack(data)
-            console.log(res, 'ini ress')
+            const res = await errorSlack(data, 'importir.com')
+            console.log(res, 'CONNECTED ERROR IN SLACK')
 
         } catch (error) {
             console.log(error, 'ini error')
