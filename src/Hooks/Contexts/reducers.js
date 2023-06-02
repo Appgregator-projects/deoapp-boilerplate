@@ -56,7 +56,7 @@ export const GlobalReducer = (initialState, action) => {
 		case "CURRENT_PROJECTS":
 			return{
 				...initialState,
-				currentProject:action.payload.projects
+				currentProject:action.payload.currentProject
 			}
 
     default:

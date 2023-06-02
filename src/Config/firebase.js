@@ -16,13 +16,13 @@ import song from "../Assets/Sound/CoinDrop-Notification.mp3"
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBmM8nIPrwMAZQniYb7E1wRt5Ak1RnBB0E",
-  authDomain: "edrus-lms.firebaseapp.com",
-  projectId: "edrus-lms",
-  storageBucket: "edrus-lms.appspot.com",
-  messagingSenderId: "972797310737",
-  appId: "1:972797310737:web:f6521a3db5452b41597eb0",
-  measurementId: "G-1GXTXGDYG5"
+	apiKey: "AIzaSyDHwfzgKXqfknEy3bctrbrlu37_hKeJevo",
+	authDomain: "deoapp-indonesia.firebaseapp.com",
+	projectId: "deoapp-indonesia",
+	storageBucket: "deoapp-indonesia.appspot.com",
+	messagingSenderId: "814589130399",
+	appId: "1:814589130399:web:a0bb255936eefd57e554aa",
+	measurementId: "G-B9FPJL2RD0"
 };
 
 // Initialize Firebase

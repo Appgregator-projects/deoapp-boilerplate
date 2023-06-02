@@ -1,6 +1,6 @@
 
 const themeConfig = {
-  logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/INDOSIAR_Logo.png/2560px-INDOSIAR_Logo.png",
+  logo: "https://deoapp-web.web.app/static/media/deoapp%20colors%20(4).20631dfbbabe92c4cafe.png",
   layout: {
     type: "vertical", // vertical, horizontal, vertical-horizontal, blank
     navbar: "",

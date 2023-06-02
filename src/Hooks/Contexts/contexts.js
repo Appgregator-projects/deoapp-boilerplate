@@ -1,6 +1,7 @@
 import { onAuthStateChanged } from "firebase/auth";
 import React, { createContext, useContext, useEffect, useReducer } from "react";
 import { auth } from "../../Config/firebase";
+import { getProjects } from "./actions";
 import { GlobalReducer, initialState } from "./reducers";
 
 // ** You can add more context in this file
@@ -41,6 +42,7 @@ export const GlobalProvider = ({ children }) => {
 	const sub = onAuthStateChanged(auth, (user) => {
 		if (user) {
 			dispatch({ type: "AUTH_STATUS", payload: {isLoggedin : true, uid:user.uid} });
+			getProjects(dispatch,user.uid)
 		} else {
 			dispatch({ type: "AUTH_STATUS", payload:  {isLoggedin : false, uid:''} });
 		}
